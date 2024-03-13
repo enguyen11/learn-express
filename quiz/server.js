@@ -37,6 +37,21 @@ app.get('/read/usernames', (req, res) => {
   res.send(usernames);
 });
 
+app.use('/read/username', addMsgToRequest);
+/*
+app.get('/read/username/:name', (req,res) =>
+{
+  let user = req.params.name;
+  let users_with_name = req.users.filter(function(user) => {
+    return user.username === name;
+});
+console.log(users_with_name
+  res.send(searchedUser);
+}
+);
+
+ */
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use('/write/adduser', addMsgToRequest);
